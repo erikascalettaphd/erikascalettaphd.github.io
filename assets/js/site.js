@@ -24,9 +24,16 @@
      about 300 px on a tall screen, less on a short one */
   let range = 300;
   const measureRange = () => { const top = nameEl.getBoundingClientRect().top + scrollY; range = Math.max(120, Math.min(300, top - 64 - 10)); };
+  const bands = [...document.querySelectorAll('.band')];
   const paintName = () => {
     const p = reduced ? 45 : 84 - 78 * Math.min(1, scrollY / range);
     document.documentElement.style.setProperty('--p', p.toFixed(1) + '%');
+    /* each section band sweeps while it rises from the bottom of the screen to the fixed bar */
+    bands.forEach(b => {
+      const top = b.getBoundingClientRect().top;
+      const t = reduced ? 0.5 : Math.min(1, Math.max(0, 1 - (top - 64) / Math.max(1, innerHeight - 64 - b.offsetHeight)));
+      b.style.setProperty('--p', (84 - 78 * t).toFixed(1) + '%');
+    });
   };
   fitName(); measureRange(); paintName();
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitName(); measureRange(); paintName(); });
@@ -171,8 +178,8 @@
     const contrib = p.contribution ? `<p><strong>My contribution.</strong> ${esc(p.contribution)}</p>` : '';
     const fig = p.figure ? `<figure><img src="${esc(p.figure.src)}" alt="${esc(p.figure.alt)}" loading="lazy"></figure>` : '';
     const body = p.featured && p.figure
-      ? `<div class="feat">${fig}<div>${contrib}<div class="row">${links}</div><pre>${esc(p.bibtex)}</pre></div></div>`
-      : `${fig}${contrib}<div class="row">${links}</div><pre>${esc(p.bibtex)}</pre>`;
+      ? `<div class="feat">${fig}<div>${contrib}<div class="row">${links}</div></div></div>`
+      : `${fig}${contrib}<div class="row">${links}</div>`;
     const li = makeCard({ id: 'pub-' + p.id, cls: p.featured ? 'featured' : '', head, body });
     li.dataset.kind = p.kind; li.dataset.year = p.year;
     pubList.appendChild(li);
