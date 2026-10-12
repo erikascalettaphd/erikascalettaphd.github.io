@@ -203,3 +203,19 @@ h1{font-size:clamp(54px,8vw,104px);line-height:.95;margin:0 0 18px}
   *,*::before,*::after{transition:none!important;animation:none!important}
 }
 
+
+/* ---- parallel version, for comparison: steel and coral everywhere ---- */
+html.theme-coral{
+  --bg:#FFF3EE;--bg-mid:#FFF8F4;--nav-bg:rgba(255,243,238,.92);
+  --night:#2B4052;--band:#4E6D87;--band-2:#C25F54;--sky:#4E6D87;--box:#FFE1D6;
+  --shadow:rgba(78,109,135,.28);--shadow-soft:rgba(78,109,135,.16);
+  --g-dark:#4E6D87;--g-light:#D9776C;
+}
+html.theme-coral .pill:hover,html.theme-coral .pill:focus-visible{background:var(--band-2)}
+html.theme-coral .pill.is-on,html.theme-coral .nav-links .pill.current{background:var(--band-2)}
+html.theme-coral .pill-dark{background:var(--night)}
+html.theme-coral .pill-dark:hover,html.theme-coral .pill-dark:focus-visible{background:var(--band-2)}
+html.theme-coral .papers a::before{background:var(--band-2)}
+html.theme-coral .card .authors .me{background:#fff}
+html.theme-coral .btn.done{border-color:var(--band-2);background:var(--band-2)}
+html.theme-coral .surface{background:var(--box)}
