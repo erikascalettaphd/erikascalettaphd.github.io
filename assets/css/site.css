@@ -50,7 +50,10 @@ p{margin:0 0 12px}
 .pill-dark:hover,.pill-dark:focus-visible{background:var(--band-2)}
 
 /* ---- the blue band of the slides: section headings ---- */
-.band{position:relative;display:inline-block;color:#fff;padding:12px 36px 12px 0;margin:0 0 30px;z-index:0}
+.band{position:relative;display:inline-block;color:#fff;padding:12px 36px 12px 0;margin:0 0 30px;z-index:0;
+  /* redefined here so that var(--p) is the point set on this band, not the one of the name */
+  --grad:linear-gradient(to right bottom,var(--g-dark) 0%,var(--p),var(--g-light) 92%,var(--g-light) 100%);
+  --grad:linear-gradient(to right bottom in oklch,var(--g-dark) 0%,var(--p),var(--g-light) 92%,var(--g-light) 100%)}
 .band::before{content:"";position:absolute;top:0;bottom:0;right:0;left:-100vw;background:var(--grad);z-index:-1}
 
 /* ---- navigation ---- */
