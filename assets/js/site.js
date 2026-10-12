@@ -20,13 +20,17 @@
     nameEl.style.width = Math.ceil(box.width + size * 0.04) + 'px';
     nameEl.style.height = Math.ceil(size * 0.95) + 'px';
   };
+  /* the sweep ends when the name reaches the fixed bar, so it is always visible while it changes:
+     about 300 px on a tall screen, less on a short one */
+  let range = 300;
+  const measureRange = () => { const top = nameEl.getBoundingClientRect().top + scrollY; range = Math.max(120, Math.min(300, top - 64 - 10)); };
   const paintName = () => {
-    const p = reduced ? 45 : 84 - 78 * Math.min(1, scrollY / 300);
+    const p = reduced ? 45 : 84 - 78 * Math.min(1, scrollY / range);
     document.documentElement.style.setProperty('--p', p.toFixed(1) + '%');
   };
-  fitName(); paintName();
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitName);
-  addEventListener('resize', fitName);
+  fitName(); measureRange(); paintName();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { fitName(); measureRange(); paintName(); });
+  addEventListener('resize', () => { fitName(); measureRange(); paintName(); });
   if (!reduced) addEventListener('scroll', paintName, { passive: true });
 
   /* every link that leaves the page opens in a new tab; anchors and email stay */
