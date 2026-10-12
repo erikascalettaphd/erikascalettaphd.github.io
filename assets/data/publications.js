@@ -1,14 +1,13 @@
 /* Publications, most recent first. Edit this file only: the page reads it.
-   Fields: id, featured (true for the one shown large), type (paper | poster), year, date (for the timeline, YYYY-MM),
+   Fields: id, featured (true for the one shown larger), kind (journal | conference | poster), year,
    authors (array; "Scaletta E." is highlighted automatically), title, venue, where, doi (or null), url, urlLabel,
-   figure (optional image path + alt), contribution (text shown under "My contribution"), bibtex. */
+   figure (optional image path + alt, shown when the entry is expanded), contribution (shown when expanded), bibtex. */
 window.PUBLICATIONS = [
   {
     id: "lta2026",
     featured: true,
-    type: "paper",
+    kind: "conference",
     year: 2026,
-    date: "2026-07",
     authors: ["Scaletta E.", "Tramontana E.", "Verga G."],
     title: "Seven Rules to Evaluate Whether You Live in a Local Transport Area",
     venue: "34th IEEE International Conference on Enabling Technologies: Infrastructure for Collaborative Enterprises (WETICE 2026)",
@@ -29,9 +28,8 @@ window.PUBLICATIONS = [
   },
   {
     id: "yoloc3-2026",
-    type: "paper",
+    kind: "journal",
     year: 2026,
-    date: "2026-04",
     authors: ["Calcagno S.", "Midolo A.", "Scaletta E.", "Tramontana E.", "Verga G."],
     title: "Detecting Objects in Aerial Imagery Using Drones and a YOLO-C3 Hybrid Approach",
     venue: "Future Internet 18(4), 204",
@@ -53,9 +51,8 @@ window.PUBLICATIONS = [
   },
   {
     id: "llm2026",
-    type: "paper",
+    kind: "journal",
     year: 2026,
-    date: "2026-02",
     authors: ["Calcagno S.", "Scaletta E.", "Tramontana E.", "Verga G."],
     title: "Aerial Image Analysis: When LLMs Assist (and When Not)",
     venue: "Future Internet 18(2), 77",
@@ -77,9 +74,8 @@ window.PUBLICATIONS = [
   },
   {
     id: "rec2025",
-    type: "paper",
+    kind: "conference",
     year: 2025,
-    date: "2025-11",
     authors: ["Marletta D.", "Scaletta E.", "Tramontana E."],
     title: "User Engagement and Adaptive Optimisation in Renewable Energy Communities",
     venue: "Product-Focused Software Process Improvement (PROFES 2025), Lecture Notes in Computer Science, Springer, pp. 183 to 192",
@@ -101,9 +97,8 @@ window.PUBLICATIONS = [
   },
   {
     id: "yolo2025",
-    type: "paper",
+    kind: "conference",
     year: 2025,
-    date: "2025-07",
     authors: ["Calcagno S.", "Scaletta E.", "Tramontana E.", "Verga G."],
     title: "YOLO-based Recognition of some Crop Categories from Real-World Aerial Images",
     venue: "33rd IEEE International Conference on Enabling Technologies: Infrastructure for Collaborative Enterprises (WETICE 2025)",
@@ -123,9 +118,8 @@ window.PUBLICATIONS = [
   },
   {
     id: "poster2025",
-    type: "poster",
+    kind: "poster",
     year: 2025,
-    date: "2025-12",
     authors: ["Calcagno S.", "Scaletta E.", "Tramontana E.", "Verga G."],
     title: "Aerial Image Analysis with YOLOv11-seg and LLaMA-4: Two Complementary Studies on a Real-World Dataset",
     venue: "Poster, ICSC Spoke 2 annual meeting",
