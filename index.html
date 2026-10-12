@@ -22,7 +22,7 @@
 
 <nav class="nav" aria-label="Main">
   <div class="nav-in">
-    <a class="brand" href="#top"><span class="name brand-name" id="brand-name">Erika Scaletta</span></a>
+    <a class="brand" href="#top">Erika Scaletta</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
     <ul class="nav-links" id="nav-links">
       <li><a class="pill" href="#about">About</a></li>
@@ -38,7 +38,13 @@
   <div class="wrap hero-grid">
     <figure class="photo"><img src="assets/img/erika.jpg" alt="Erika Scaletta" width="900" height="1199"></figure>
     <div class="hero-text">
-      <h1><span class="name" id="name">Erika Scaletta</span></h1>
+      <h1 class="name" id="name" aria-label="Erika Scaletta">
+        <svg class="name-svg" aria-hidden="true" focusable="false">
+          <clipPath id="name-clip" clipPathUnits="userSpaceOnUse"><text id="name-text" x="0" y="0">Erika Scaletta</text></clipPath>
+          <text id="name-measure" x="0" y="0" opacity="0">Erika Scaletta</text>
+        </svg>
+        <div class="name-fill"></div>
+      </h1>
       <p class="role">PhD researcher in Computer Science at the University of Catania, currently visiting IDLab (Ghent University)</p>
       <p class="lede">I teach machines to read places from above: what grows in a field, how a city is built, and where a road becomes dangerous for cyclists.</p>
       <p class="affil">Department of Mathematics and Computer Science, University of Catania. Supervisor: Prof. Emiliano Alessio Tramontana.</p>

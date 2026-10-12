@@ -10,18 +10,24 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   /* ===================== effect 1: the name changes colour while scrolling ===================== */
-  /* the big name sweeps its gradient within the first screen, while it is still visible;
-     the small name in the fixed bar sweeps along the whole page */
-  const name = document.getElementById('name'), brand = document.getElementById('brand-name');
-  const paintName = () => {
-    const hero = document.getElementById('top');
-    const early = Math.min(1, scrollY / Math.max(1, hero.offsetHeight * 0.6));
-    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
-    const whole = Math.min(1, scrollY / max);
-    name.style.backgroundPosition = (early * 100) + '% 50%';
-    brand.style.backgroundPosition = (whole * 100) + '% 50%';
+  /* as on wattenberger.com: the name is SVG text inside a clipPath, a div clipped by it carries the
+     gradient, and the transition point moves from 84% (top of the page) to 6% (after about 300 px) */
+  const nameEl = document.getElementById('name'), nameText = document.getElementById('name-text'), nameMeasure = document.getElementById('name-measure');
+  const fitName = () => {
+    const size = parseFloat(getComputedStyle(nameEl).fontSize);
+    [nameText, nameMeasure].forEach(t => { t.setAttribute('font-size', size); t.setAttribute('y', Math.round(size * 0.78)); });
+    const box = nameMeasure.getBBox();
+    nameEl.style.width = Math.ceil(box.width + size * 0.04) + 'px';
+    nameEl.style.height = Math.ceil(size * 0.95) + 'px';
   };
-  if (!reduced) { addEventListener('scroll', paintName, { passive: true }); addEventListener('resize', paintName); paintName(); }
+  const paintName = () => {
+    const p = reduced ? 45 : 84 - 78 * Math.min(1, scrollY / 300);
+    document.documentElement.style.setProperty('--p', p.toFixed(1) + '%');
+  };
+  fitName(); paintName();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitName);
+  addEventListener('resize', fitName);
+  if (!reduced) addEventListener('scroll', paintName, { passive: true });
 
   /* every link that leaves the page opens in a new tab; anchors and email stay */
   const externalise = root => root.querySelectorAll('a[href]').forEach(a => { const href = a.getAttribute('href'); if (href.startsWith('#') || href.startsWith('mailto:')) return; a.target = '_blank'; a.rel = 'noopener'; });
