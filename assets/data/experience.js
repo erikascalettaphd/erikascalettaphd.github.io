@@ -29,7 +29,7 @@ window.EXPERIENCE = [
         detail: "The research lines are described in the Research section: computer vision and deep learning on real aerial images of Sicily, urban computing software that translates Christopher Alexander's design patterns into computable rules on open geospatial data, and cycling safety.", link: "#research", linkLabel: "See the Research section" },
       { when: "20 to 25 Jul 2026", title: "LxMLS 2026, Lisbon Machine Learning Summer School", org: "Instituto Superior Técnico and Instituto de Telecomunicações, Lisbon",
         summary: "Neural networks, sequence models, Transformers, vision-language models.",
-        detail: "Lectures and Python labs." },
+        detail: "Lectures and Python labs.", link: "https://lxmls.it.pt/", linkLabel: "LxMLS website" },
       { when: "Feb to Jun 2024", title: "Research internship", org: "CINUM, Centro di Informatica Umanistica, University of Catania",
         summary: "150 hours. XML-TEI encoding and co-development of DanteGPT.",
         detail: "XML-TEI encoding of a corpus for a digital library of modern Sicilian; co-development of DanteGPT, a web platform that uses LLM APIs to make the entries of the Vocabolario Dantesco understandable to children." }
@@ -68,7 +68,7 @@ window.EXPERIENCE = [
       { when: "23 to 25 Jul 2025", title: "YOLO-based recognition of crop categories from real-world aerial images", org: "IEEE WETICE 2025, Catania",
         summary: "Conference presentation.", link: "#pub-yolo2025", linkLabel: "See the paper" },
       { when: "20 to 25 Jul 2026", title: "LxMLS 2026, Lisbon Machine Learning Summer School", org: "Lisbon",
-        summary: "See Research experience." }
+        summary: "See Research experience.", link: "https://lxmls.it.pt/", linkLabel: "LxMLS website" }
     ]
   },
   {

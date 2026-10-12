@@ -131,16 +131,22 @@
     const li = h('li', 'card' + (opts.cls ? ' ' + opts.cls : '')); if (opts.id) li.id = opts.id;
     const expandable = !!opts.body;
     li.innerHTML = (expandable
-      ? `<button class="card-head" type="button" aria-expanded="false">${opts.head}<span class="plus" aria-hidden="true">+</span></button><div class="body"><div><div class="body-in">${opts.body}</div></div></div>`
-      : `<div class="card-head">${opts.head}</div>`);
+      ? `<div class="card-head">${opts.head}<button class="plus" type="button" aria-expanded="false" aria-label="Show details">+</button></div><div class="body"><div><div class="body-in">${opts.body}</div></div></div>`
+      : `<div class="card-head static">${opts.head}</div>`);
     if (!expandable) li.classList.add('static');
     return li;
   }
+  function toggleCard(card, force) {
+    const b = card.querySelector('.plus[aria-expanded]'); if (!b) return;
+    const open = typeof force === 'boolean' ? card.classList.toggle('open', force) : card.classList.toggle('open');
+    b.setAttribute('aria-expanded', String(open)); b.setAttribute('aria-label', open ? 'Hide details' : 'Show details');
+  }
   document.addEventListener('click', e => {
-    const b = e.target.closest('.card-head[aria-expanded]'); if (!b) return;
-    const card = b.closest('.card'); const open = card.classList.toggle('open'); b.setAttribute('aria-expanded', String(open));
+    if (e.target.closest('a, .copy')) return;
+    const head = e.target.closest('.card-head:not(.static)'); if (!head) return;
+    toggleCard(head.closest('.card'));
   });
-  function openCard(id) { const c = document.getElementById(id); if (!c) return; c.classList.add('open'); const b = c.querySelector('.card-head[aria-expanded]'); if (b) b.setAttribute('aria-expanded', 'true'); document.querySelectorAll('.card.target').forEach(x => x.classList.remove('target')); c.classList.add('target'); }
+  function openCard(id) { const c = document.getElementById(id); if (!c) return; toggleCard(c, true); document.querySelectorAll('.card.target').forEach(x => x.classList.remove('target')); c.classList.add('target'); }
 
   /* ===================== publications ===================== */
   const PUBS = (window.PUBLICATIONS || []).slice();
@@ -151,7 +157,7 @@
     const links = (p.doi ? `<a class="pill" href="https://doi.org/${esc(p.doi)}">DOI ${esc(p.doi)}</a>` : '') +
       (p.url && !(p.doi && p.url.includes(p.doi)) ? `<a class="pill" href="${esc(p.url)}">${esc(p.urlLabel || 'Link')}</a>` : '') +
       `<button class="btn copy" type="button" data-id="${esc(p.id)}">Copy BibTeX</button>`;
-    const head = `<div><p class="meta">${p.year} · ${esc(KINDS[p.kind] || p.kind)}</p><p class="authors">${authorsHtml(p.authors)}</p><p class="title">${esc(p.title)}</p><p class="sub">${esc(p.venue)}. ${esc(p.where)}</p></div>`;
+    const head = `<div><p class="meta">${p.year} · ${esc(KINDS[p.kind] || p.kind)}</p><p class="authors">${authorsHtml(p.authors)}</p><p class="title">${p.url && (p.doi || p.kind === 'poster' || p.pageIsPaper) ? `<a href="${esc(p.url)}">${esc(p.title)}</a>` : esc(p.title)}</p><p class="sub">${esc(p.venue)}. ${esc(p.where)}</p></div>`;
     const contrib = p.contribution ? `<p><strong>My contribution.</strong> ${esc(p.contribution)}</p>` : '';
     const fig = p.figure ? `<figure><img src="${esc(p.figure.src)}" alt="${esc(p.figure.alt)}" loading="lazy"></figure>` : '';
     const body = p.featured && p.figure
