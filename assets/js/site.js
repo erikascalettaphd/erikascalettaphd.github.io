@@ -10,9 +10,22 @@
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
   /* ===================== effect 1: the name changes colour while scrolling ===================== */
-  const name = document.getElementById('name');
-  const paintName = () => { const max = Math.max(1, document.documentElement.scrollHeight - innerHeight); const p = Math.min(1, scrollY / max); name.style.backgroundPosition = (p * 100) + '% 50%'; };
+  /* the big name sweeps its gradient within the first screen, while it is still visible;
+     the small name in the fixed bar sweeps along the whole page */
+  const name = document.getElementById('name'), brand = document.getElementById('brand-name');
+  const paintName = () => {
+    const hero = document.getElementById('top');
+    const early = Math.min(1, scrollY / Math.max(1, hero.offsetHeight * 0.6));
+    const max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    const whole = Math.min(1, scrollY / max);
+    name.style.backgroundPosition = (early * 100) + '% 50%';
+    brand.style.backgroundPosition = (whole * 100) + '% 50%';
+  };
   if (!reduced) { addEventListener('scroll', paintName, { passive: true }); addEventListener('resize', paintName); paintName(); }
+
+  /* every link that leaves the page opens in a new tab; anchors and email stay */
+  const externalise = root => root.querySelectorAll('a[href]').forEach(a => { const href = a.getAttribute('href'); if (href.startsWith('#') || href.startsWith('mailto:')) return; a.target = '_blank'; a.rel = 'noopener'; });
+  externalise(document);
 
   /* ===================== effect 2: the lens ===================== */
   const LTA = window.LTA_CALTAGIRONE, ROUTE = window.ROUTE_KOPPENBERG;
@@ -129,7 +142,7 @@
   });
   function openCard(id) { const c = document.getElementById(id); if (!c) return; c.classList.add('open'); const b = c.querySelector('.card-head[aria-expanded]'); if (b) b.setAttribute('aria-expanded', 'true'); document.querySelectorAll('.card.target').forEach(x => x.classList.remove('target')); c.classList.add('target'); }
 
-  /* ===================== publications, with filters (effect 5) ===================== */
+  /* ===================== publications ===================== */
   const PUBS = (window.PUBLICATIONS || []).slice();
   const KINDS = { journal: 'Journal', conference: 'Conference', poster: 'Poster' };
   const authorsHtml = a => a.map(n => n === 'Scaletta E.' ? `<span class="me">${esc(n)}</span>` : esc(n)).join(', ');
@@ -148,25 +161,6 @@
     li.dataset.kind = p.kind; li.dataset.year = p.year;
     pubList.appendChild(li);
   });
-  const years = [...new Set(PUBS.map(p => p.year))].sort((a, b) => b - a);
-  const state = { kind: 'all', year: 'all' };
-  const mkFilter = (group, key, label) => { const b = h('button', 'pill' + (key === 'all' ? ' is-on' : ''), esc(label)); b.type = 'button'; b.dataset.group = group; b.dataset.key = key; b.setAttribute('aria-pressed', String(key === 'all')); return b; };
-  const ft = document.getElementById('filter-type'), fy = document.getElementById('filter-year');
-  ft.appendChild(mkFilter('kind', 'all', 'All')); Object.keys(KINDS).forEach(k => { if (PUBS.some(p => p.kind === k)) ft.appendChild(mkFilter('kind', k, KINDS[k])); });
-  fy.appendChild(mkFilter('year', 'all', 'All')); years.forEach(y => fy.appendChild(mkFilter('year', String(y), String(y))));
-  const note = document.getElementById('pub-note');
-  function applyFilters() {
-    let n = 0;
-    pubList.querySelectorAll('.card').forEach(c => { const ok = (state.kind === 'all' || c.dataset.kind === state.kind) && (state.year === 'all' || c.dataset.year === state.year); c.classList.toggle('hide', !ok); if (ok) n++; });
-    note.textContent = `${n} of ${PUBS.length} shown. Click an entry to expand it.`;
-  }
-  document.querySelectorAll('.filter-row').forEach(row => row.addEventListener('click', e => {
-    const b = e.target.closest('button'); if (!b) return;
-    state[b.dataset.group] = b.dataset.key;
-    row.querySelectorAll('button').forEach(x => { const on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', String(on)); });
-    applyFilters();
-  }));
-  applyFilters();
   document.addEventListener('click', e => {
     const b = e.target.closest('.copy'); if (!b) return;
     const p = PUBS.find(x => x.id === b.dataset.id); if (!p) return;
@@ -188,6 +182,8 @@
     });
     wrap.appendChild(ol); expEl.appendChild(wrap);
   });
+
+  externalise(document.getElementById('pub-list')); externalise(document.getElementById('exp-list'));
 
   /* a publication reached from a link opens itself */
   const followHash = () => { if (location.hash && location.hash.startsWith('#pub-')) openCard(location.hash.slice(1)); };
