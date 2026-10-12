@@ -3,7 +3,7 @@
   'use strict';
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-  const R = 85; // lens radius in px; keep in sync with --lens in the CSS
+  const radius = s => parseFloat(getComputedStyle(s).getPropertyValue('--lens')) / 2 || 85; // half of --lens
   const NS = 'http://www.w3.org/2000/svg';
   const el = (n, a, text) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (text != null) e.textContent = text; return e; };
   const h = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
@@ -77,7 +77,7 @@
     return label;
   }
   function reveal(s, x, y) {
-    s.querySelector('.reveal').style.clipPath = `circle(${R}px at ${x}px ${y}px)`;
+    s.querySelector('.reveal').style.clipPath = `circle(${radius(s)}px at ${x}px ${y}px)`;
     const ring = s.querySelector('.ring'); ring.style.left = x + 'px'; ring.style.top = y + 'px'; ring.querySelector('.tag').textContent = labelFor(s, x, y);
     s.classList.add('active');
   }

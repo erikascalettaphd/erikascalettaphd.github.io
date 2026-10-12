@@ -105,6 +105,9 @@ h1{font-size:clamp(54px,8vw,104px);line-height:.95;margin:0 0 18px}
 .surface.active .ring{opacity:1}
 @media (hover:hover) and (pointer:fine){.surface{cursor:none}}
 .surface.square{aspect-ratio:1/1}
+.surface.wide-aerial{aspect-ratio:690/806}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.trio .surface{--lens:110px;border-radius:12px}
 .surface.tall{aspect-ratio:4/5;max-height:560px}
 .surface.wide{aspect-ratio:800/652}
 .ov text{font-family:"Poppins",sans-serif}

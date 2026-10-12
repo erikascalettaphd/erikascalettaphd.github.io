@@ -95,12 +95,30 @@
         </ul>
       </div>
       <div class="line-fig">
-        <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of orchards and a dirt road in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO instance masks">
-          <img class="layer base" src="assets/img/pair2-orig.jpg" alt="" width="476" height="473">
-          <img class="layer reveal" src="assets/img/pair2-seg.jpg" alt="" width="476" height="473">
-          <div class="ring"><span class="tag">YOLO instance masks</span></div>
+        <div class="surface wide-aerial" tabindex="0" role="img" aria-label="Aerial image of a Sicilian countryside. Under the lens, the YOLO-C3 segmentation: roads in magenta, citrus groves in yellow, houses in blue, fields in orange." data-label="roads · citrus groves · houses · fields">
+          <img class="layer base" src="assets/img/sicily-orig.jpg" alt="" width="690" height="806">
+          <img class="layer reveal" src="assets/img/sicily-seg.jpg" alt="" width="690" height="806">
+          <div class="ring"><span class="tag">roads · citrus groves · houses · fields</span></div>
         </div>
-        <p class="caption">Sicily, from the dataset. Image source: Google Maps.</p>
+        <p class="caption">YOLO-C3 output on an aerial image.</p>
+        <div class="trio">
+          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of a field edge and an orchard in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks">
+            <img class="layer base" src="assets/img/pair1-orig.jpg" alt="" width="475" height="473" loading="lazy">
+            <img class="layer reveal" src="assets/img/pair1-seg.jpg" alt="" width="475" height="473" loading="lazy">
+            <div class="ring"><span class="tag">YOLO masks</span></div>
+          </div>
+          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of orchards and a dirt road in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks">
+            <img class="layer base" src="assets/img/pair2-orig.jpg" alt="" width="476" height="473" loading="lazy">
+            <img class="layer reveal" src="assets/img/pair2-seg.jpg" alt="" width="476" height="473" loading="lazy">
+            <div class="ring"><span class="tag">YOLO masks</span></div>
+          </div>
+          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of an orchard with a water tank in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks">
+            <img class="layer base" src="assets/img/pair3-orig.jpg" alt="" width="475" height="473" loading="lazy">
+            <img class="layer reveal" src="assets/img/pair3-seg.jpg" alt="" width="475" height="473" loading="lazy">
+            <div class="ring"><span class="tag">YOLO masks</span></div>
+          </div>
+        </div>
+        <p class="caption">Three images from the dataset, Sicily. Image source: Google Maps.</p>
       </div>
     </article>
 
