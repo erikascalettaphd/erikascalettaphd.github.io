@@ -69,7 +69,7 @@
     if (!ROUTE) return;
     svg.appendChild(el('rect', { width: ROUTE.w, height: ROUTE.h, fill: '#f6f9fb' }));
     svg.appendChild(el('image', { href: 'assets/img/flanders-roads.svg', width: ROUTE.w, height: ROUTE.h }));
-    svg.appendChild(el('polyline', { points: ROUTE.route.map(p => p.join(',')).join(' '), fill: 'none', stroke: '#2B59C3', 'stroke-width': '5', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
+    svg.appendChild(el('polyline', { points: ROUTE.route.map(p => p.join(',')).join(' '), fill: 'none', stroke: getComputedStyle(document.documentElement).getPropertyValue('--band-2').trim() || '#2B59C3', 'stroke-width': '5', 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }));
     const [sx, sy] = ROUTE.route[0], [ex, ey] = ROUTE.route[ROUTE.route.length - 1];
     svg.appendChild(el('text', { x: sx + 12, y: sy + 16, 'font-size': '12', fill: '#063050' }, 'start, Melden'));
     svg.appendChild(el('text', { x: ex + 12, y: ey - 8, 'font-size': '12', fill: '#063050' }, 'top'));
