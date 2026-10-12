@@ -15,7 +15,7 @@
   --nav-h:64px;
   --ease:cubic-bezier(.2,.7,.2,1);
   /* the gradient of the name and of the navigation pills: the transition point moves while scrolling */
-  --p:84%;
+  --p:6%;
   --g-dark:#4E5F96;
   --g-light:#2E8BD1;
   --nav-bg:rgba(235,245,254,.9);

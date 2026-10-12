@@ -26,13 +26,13 @@
   const measureRange = () => { const top = nameEl.getBoundingClientRect().top + scrollY; range = Math.max(120, Math.min(300, top - 64 - 10)); };
   const bands = [...document.querySelectorAll('.band')];
   const paintName = () => {
-    const p = reduced ? 45 : 84 - 78 * Math.min(1, scrollY / range);
+    const p = reduced ? 45 : 6 + 78 * Math.min(1, scrollY / range); // light at rest, dark comes in while scrolling
     document.documentElement.style.setProperty('--p', p.toFixed(1) + '%');
     /* each section band sweeps while it rises from the bottom of the screen to the fixed bar */
     bands.forEach(b => {
       const top = b.getBoundingClientRect().top;
       const t = reduced ? 0.5 : Math.min(1, Math.max(0, 1 - (top - 64) / Math.max(1, innerHeight - 64 - b.offsetHeight)));
-      b.style.setProperty('--p', (84 - 78 * t).toFixed(1) + '%');
+      b.style.setProperty('--p', (6 + 78 * t).toFixed(1) + '%');
     });
   };
   fitName(); measureRange(); paintName();
