@@ -99,13 +99,19 @@
     const ring = s.querySelector('.ring'); ring.style.left = x + 'px'; ring.style.top = y + 'px'; ring.querySelector('.tag').textContent = labelFor(s, x, y);
     s.classList.add('active');
   }
-  function hide(s) { s.querySelector('.reveal').style.clipPath = 'circle(0px at 50% 50%)'; s.classList.remove('active'); }
+  /* when the pointer is not over the image, the lens rests at a fixed spot (data-rest, fractions of width and height; centre by default) */
+  function rest(s) { const [fx, fy] = (s.dataset.rest || '0.5 0.5').split(' ').map(Number); reveal(s, s.clientWidth * fx, s.clientHeight * fy); }
+  function hide(s) { rest(s); }
 
   if (fine) {
     surfaces.forEach(s => {
+      rest(s);
       s.addEventListener('pointermove', e => { const r = s.getBoundingClientRect(); reveal(s, e.clientX - r.left, e.clientY - r.top); }, { passive: true });
-      s.addEventListener('pointerleave', () => hide(s));
+      s.addEventListener('pointerleave', () => rest(s));
     });
+    addEventListener('resize', () => surfaces.forEach(s => { if (!s.matches(':hover')) rest(s); }));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => surfaces.forEach(rest));
+    addEventListener('load', () => surfaces.forEach(s => { if (!s.matches(':hover')) rest(s); }));
   } else {
     /* touch: the lens sweeps with the scroll, a touch takes it over */
     surfaces.forEach(s => {
