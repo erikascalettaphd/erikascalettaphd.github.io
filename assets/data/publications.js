@@ -1,7 +1,7 @@
 /* Publications, most recent first. Edit this file only: the page reads it.
    Fields: id, featured (true for the one shown larger), kind (journal | conference | poster), year,
    authors (array; "Scaletta E." is highlighted automatically), title, venue, where, doi (or null), url, urlLabel,
-   figure (optional image path + alt, shown when the entry is expanded), contribution (shown when expanded), bibtex. */
+   figure (optional image path + alt, shown when the entry is expanded), contribution (shown when expanded; write **like this** for bold), bibtex. */
 window.PUBLICATIONS = [
   {
     id: "lta2026",
@@ -16,7 +16,7 @@ window.PUBLICATIONS = [
     url: "https://erikascalettaphd.github.io/design_pattern_map/",
     urlLabel: "City Explorer, the 23 cities",
     figure: { src: "assets/img/caltagirone-lta.jpg", alt: "Map of Caltagirone with two candidate Local Transport Areas: the historic centre in red and the new centre in green, with green spaces marked" },
-    contribution: "I conceived the approach, designed and implemented the software pipeline, ran the case study and wrote the paper. I presented it at the conference.",
+    contribution: "I **conceived the approach**, **designed and implemented the software pipeline**, ran the case study and wrote the paper. I **presented it at the conference**.",
     bibtex: `@inproceedings{scaletta2026seven,
   author    = {Scaletta, Erika and Tramontana, Emiliano and Verga, Gabriella},
   title     = {Seven Rules to Evaluate Whether You Live in a Local Transport Area},
@@ -37,7 +37,7 @@ window.PUBLICATIONS = [
     doi: "10.3390/fi18040204",
     url: "https://doi.org/10.3390/fi18040204",
     urlLabel: "Open access",
-    contribution: "I built and curated the dataset, reviewed the state of the art and wrote the related sections.",
+    contribution: "I **built and curated the dataset**, reviewed the **state of the art** and wrote the related sections.",
     bibtex: `@article{calcagno2026detecting,
   author  = {Calcagno, Salvatore and Midolo, Alessandro and Scaletta, Erika and Tramontana, Emiliano and Verga, Gabriella},
   title   = {Detecting Objects in Aerial Imagery Using Drones and a {YOLO-C3} Hybrid Approach},
@@ -60,7 +60,7 @@ window.PUBLICATIONS = [
     doi: "10.3390/fi18020077",
     url: "https://doi.org/10.3390/fi18020077",
     urlLabel: "Open access",
-    contribution: "I designed and ran the experimental pipeline: prompt engineering, evaluation protocol, precision, recall and accuracy analysis, and the comparison with the supervised model.",
+    contribution: "I **designed and ran the experimental pipeline**: **prompt engineering**, evaluation protocol, precision, recall and accuracy analysis, and the comparison with the supervised model.",
     bibtex: `@article{calcagno2026aerial,
   author  = {Calcagno, Salvatore and Scaletta, Erika and Tramontana, Emiliano and Verga, Gabriella},
   title   = {Aerial Image Analysis: When {LLMs} Assist (and When Not)},
@@ -83,7 +83,7 @@ window.PUBLICATIONS = [
     doi: "10.1007/978-3-032-12092-2_13",
     url: "https://doi.org/10.1007/978-3-032-12092-2_13",
     urlLabel: "Springer",
-    contribution: "I did the data analysis in Python, the literature review and the writing. I presented the paper at the A-SPPI workshop of PROFES 2025 in Salerno.",
+    contribution: "I did the **data analysis in Python**, the literature review and the writing. I **presented the paper** at the A-SPPI workshop of PROFES 2025 in Salerno.",
     bibtex: `@inproceedings{marletta2025user,
   author    = {Marletta, Daniele and Scaletta, Erika and Tramontana, Emiliano},
   title     = {User Engagement and Adaptive Optimisation in Renewable Energy Communities},
@@ -106,7 +106,7 @@ window.PUBLICATIONS = [
     doi: "10.1109/WETICE67341.2025.11092212",
     url: "https://ieeexplore.ieee.org/abstract/document/11092212",
     urlLabel: "IEEE Xplore",
-    contribution: "I built the dataset with polygon annotation and wrote the paper. I presented it at the conference.",
+    contribution: "I **built the dataset with polygon annotation** and wrote the paper. I **presented it at the conference**.",
     bibtex: `@inproceedings{calcagno2025yolo,
   author    = {Calcagno, Salvatore and Scaletta, Erika and Tramontana, Emiliano and Verga, Gabriella},
   title     = {{YOLO}-based Recognition of some Crop Categories from Real-World Aerial Images},

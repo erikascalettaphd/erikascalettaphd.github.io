@@ -8,6 +8,7 @@
   const el = (n, a, text) => { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (text != null) e.textContent = text; return e; };
   const h = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const fmt = s => esc(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); // **word** in the data files becomes bold
 
   /* ===================== effect 1: the name changes colour while scrolling ===================== */
   /* as on wattenberger.com: the name is SVG text inside a clipPath, a div clipped by it carries the
@@ -175,7 +176,7 @@
       (p.url && !(p.doi && p.url.includes(p.doi)) ? `<a class="pill" href="${esc(p.url)}">${esc(p.urlLabel || 'Link')}</a>` : '') +
       `<button class="btn copy" type="button" data-id="${esc(p.id)}">Copy BibTeX</button>`;
     const head = `<div><p class="meta">${p.year} · ${esc(KINDS[p.kind] || p.kind)}</p><p class="authors">${authorsHtml(p.authors)}</p><p class="title">${p.url && (p.doi || p.kind === 'poster' || p.pageIsPaper) ? `<a href="${esc(p.url)}">${esc(p.title)}</a>` : esc(p.title)}</p><p class="sub">${esc(p.venue)}. ${esc(p.where)}</p></div>`;
-    const contrib = p.contribution ? `<p><strong>My contribution.</strong> ${esc(p.contribution)}</p>` : '';
+    const contrib = p.contribution ? `<p><strong>My contribution.</strong> ${fmt(p.contribution)}</p>` : '';
     const fig = p.figure ? `<figure><img src="${esc(p.figure.src)}" alt="${esc(p.figure.alt)}" loading="lazy"></figure>` : '';
     const body = p.featured && p.figure
       ? `<div class="feat">${fig}<div>${contrib}<div class="row">${links}</div></div></div>`
@@ -199,8 +200,8 @@
     wrap.appendChild(h('h3', null, esc(sec.title)));
     const ol = h('ol', 'cards');
     sec.items.forEach(it => {
-      const head = `<div>${it.when ? `<p class="meta">${esc(it.when)}</p>` : ''}<p class="title">${esc(it.title)}</p>${it.org ? `<p class="sub">${esc(it.org)}</p>` : ''}${it.summary ? `<p class="sub">${esc(it.summary)}</p>` : ''}</div>`;
-      const body = (it.detail || it.link) ? `${it.detail ? `<p>${esc(it.detail)}</p>` : ''}${it.link ? `<p><a href="${esc(it.link)}">${esc(it.linkLabel || 'Link')}</a></p>` : ''}` : null;
+      const head = `<div>${it.when ? `<p class="meta">${esc(it.when)}</p>` : ''}<p class="title">${esc(it.title)}</p>${it.org ? `<p class="sub">${esc(it.org)}</p>` : ''}${it.summary ? `<p class="sub">${fmt(it.summary)}</p>` : ''}</div>`;
+      const body = (it.detail || it.link) ? `${it.detail ? `<p>${fmt(it.detail)}</p>` : ''}${it.link ? `<p><a href="${esc(it.link)}">${esc(it.linkLabel || 'Link')}</a></p>` : ''}` : null;
       ol.appendChild(makeCard({ head, body }));
     });
     wrap.appendChild(ol); expEl.appendChild(wrap);
