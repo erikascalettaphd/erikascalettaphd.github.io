@@ -19,19 +19,23 @@
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <nav class="nav" aria-label="Main">
   <div class="nav-in">
     <a class="brand" href="#top">Erika Scaletta</a>
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu"><span></span><span></span></button>
     <ul class="nav-links" id="nav-links">
-      <li><a class="pill" href="#about">About</a></li>
-      <li><a class="pill" href="#research">Research</a></li>
-      <li><a class="pill" href="#publications">Publications</a></li>
-      <li><a class="pill" href="#experience">Experience</a></li>
-      <li><a class="pill" href="#contact">Contact</a></li>
+      <li><a class="pill" href="#about" data-i18n="nav.about">About</a></li>
+      <li><a class="pill" href="#research" data-i18n="nav.research">Research</a></li>
+      <li><a class="pill" href="#publications" data-i18n="nav.publications">Publications</a></li>
+      <li><a class="pill" href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a class="pill" href="#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" data-lang="it" aria-pressed="false" lang="it">IT</button>
+    </div>
   </div>
 </nav>
 
@@ -47,15 +51,15 @@
         <div class="name-fill"></div>
       </h1>
       <ul class="roles">
-        <li>PhD researcher in Computer Science</li>
-        <li>Founder of <a href="https://www.instagram.com/sei_arte/">Sei Arte</a></li>
+        <li data-i18n="role.phd">PhD researcher in Computer Science</li>
+        <li data-i18n="role.founder">Founder of <a href="https://www.instagram.com/sei_arte/">Sei Arte</a></li>
       </ul>
       <ul class="facts">
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Department of Mathematics and Computer Science, University of Catania</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span>Visiting PhD researcher at IDLab, Ghent University</span></li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5z"/></svg><span>Supervisor: Prof. Emiliano Alessio Tramontana</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span data-i18n="fact.dept">Department of Mathematics and Computer Science, University of Catania</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg><span data-i18n="fact.visit">Visiting PhD researcher at IDLab, Ghent University</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zm0 2c-4 0-8 2-8 5v2h16v-2c0-3-4-5-8-5z"/></svg><span data-i18n="fact.sup">Supervisor: Prof. Emiliano Alessio Tramontana</span></li>
       </ul>
-      <p class="lede">I teach machines to read places from above: <b>what grows in a field</b>, <b>how a city is built</b>, and <b>where a road becomes dangerous for cyclists</b>.</p>
+      <p class="lede" data-i18n="lede">I teach machines to read places from above: <b>what grows in a field</b>, <b>how a city is built</b>, and <b>where a road becomes dangerous for cyclists</b>.</p>
       <ul class="buttons">
         <li><a class="pill" href="https://scholar.google.com/citations?user=HHEmF8QAAAAJ">Google Scholar</a></li>
         <li><a class="pill" href="https://orcid.org/0009-0003-3692-6091">ORCID</a></li>
@@ -72,21 +76,21 @@
 
 <section class="section" id="about" aria-labelledby="about-title">
   <div class="wrap">
-    <h2 class="band" id="about-title">About</h2>
+    <h2 class="band" id="about-title" data-i18n="about.title">About</h2>
     <div class="about-grid">
-      <p class="bio">I am a <b>researcher in Computer Science</b> who came to code through literature. After a <b>B.A. in Modern Literature</b> and an <b>M.Sc. in Digital Humanities</b> at the University of Catania, where I built a digital library of Sicilian and co-developed <b>DanteGPT</b>, I started a <b>PhD in Computer Science</b> in December 2024, supervised by Prof. Emiliano Alessio Tramontana and co-funded by the <b>National Centre for HPC, Big Data and Quantum Computing</b>. Reading texts closely taught me to read places the same way. Today I train <b>vision models on aerial images of Sicily</b>, turn <b>Christopher Alexander's urban patterns</b> into rules computed on OpenStreetMap data and, as a <b>visiting PhD researcher at IDLab in Ghent</b>, look for the road features that make <b>cycling races</b> dangerous.</p>
+      <p class="bio" data-i18n="about.bio">I am a <b>researcher in Computer Science</b> who came to code through literature. After a <b>B.A. in Modern Literature</b> and an <b>M.Sc. in Digital Humanities</b> at the University of Catania, where I built a digital library of Sicilian and co-developed <b>DanteGPT</b>, I started a <b>PhD in Computer Science</b> in December 2024, supervised by Prof. Emiliano Alessio Tramontana and co-funded by the <b>National Centre for HPC, Big Data and Quantum Computing</b>. Reading texts closely taught me to read places the same way. Today I train <b>vision models on aerial images of Sicily</b>, turn <b>Christopher Alexander's urban patterns</b> into rules computed on OpenStreetMap data and, as a <b>visiting PhD researcher at IDLab in Ghent</b>, look for the road features that make <b>cycling races</b> dangerous.</p>
       <div class="about-side">
-        <h3>Research interests</h3>
+        <h3 data-i18n="about.interests">Research interests</h3>
         <ul class="tags">
-          <li>computer vision for aerial and satellite imagery</li>
-          <li>object detection and segmentation</li>
-          <li>urban computing</li>
-          <li>Christopher Alexander's design patterns</li>
-          <li>geospatial data</li>
-          <li>sport data science</li>
-          <li>cycling safety</li>
+          <li data-i18n="tag.1">computer vision for aerial and satellite imagery</li>
+          <li data-i18n="tag.2">object detection and segmentation</li>
+          <li data-i18n="tag.3">urban computing</li>
+          <li data-i18n="tag.4">Christopher Alexander's design patterns</li>
+          <li data-i18n="tag.5">geospatial data</li>
+          <li data-i18n="tag.6">sport data science</li>
+          <li data-i18n="tag.7">cycling safety</li>
         </ul>
-        <p class="personal">Outside the lab: <b>karate</b>, black belt 3rd dan, athlete and instructor for children.</p>
+        <p class="personal" data-i18n="about.personal">Outside the lab: <b>karate</b>, black belt 3rd dan, athlete and instructor for children.</p>
       </div>
     </div>
   </div>
@@ -94,56 +98,56 @@
 
 <section class="section" id="research" aria-labelledby="research-title">
   <div class="wrap">
-    <h2 class="band" id="research-title">Research</h2>
-    <p class="intro">Three lines, in order of time. Move the lens over each image to see what the model sees.</p>
+    <h2 class="band" id="research-title" data-i18n="research.title">Research</h2>
+    <p class="intro" data-i18n="research.intro">Three lines, in order of time. Move the lens over each image to see what the model sees.</p>
 
     <article class="line">
       <div class="line-text">
-        <p class="when">Since 2025</p>
-        <h3>Aerial and satellite imagery</h3>
-        <p>Computer vision and deep learning, <b>object detection and segmentation</b>, on <b>real aerial and satellite images of Sicily</b>, on a dataset I built: by May 2026, <b>605 images, 3,926 annotated instances and 11 categories</b>. A hybrid <b>YOLO-C3</b> pipeline, a pixel-based classifier plus YOLO, designed for drones. And a study of what <b>LLMs</b> can and cannot see in aerial images.</p>
+        <p class="when" data-i18n="r1.when">Since 2025</p>
+        <h3 data-i18n="r1.title">Aerial and satellite imagery</h3>
+        <p data-i18n="r1.text">Computer vision and deep learning, <b>object detection and segmentation</b>, on <b>real aerial and satellite images of Sicily</b>, on a dataset I built: by May 2026, <b>605 images, 3,926 annotated instances and 11 categories</b>. A hybrid <b>YOLO-C3</b> pipeline, a pixel-based classifier plus YOLO, designed for drones. And a study of what <b>LLMs</b> can and cannot see in aerial images.</p>
         <ul class="papers">
-          <li><a href="#pub-yolo2025">YOLO-based recognition of crop categories, IEEE WETICE 2025</a></li>
-          <li><a href="#pub-llm2026">When LLMs assist (and when not), Future Internet 2026</a></li>
-          <li><a href="#pub-yoloc3-2026">YOLO-C3 hybrid approach, Future Internet 2026</a></li>
+          <li><a href="#pub-yolo2025" data-i18n="r1.p1">YOLO-based recognition of crop categories, IEEE WETICE 2025</a></li>
+          <li><a href="#pub-llm2026" data-i18n="r1.p2">When LLMs assist (and when not), Future Internet 2026</a></li>
+          <li><a href="#pub-yoloc3-2026" data-i18n="r1.p3">YOLO-C3 hybrid approach, Future Internet 2026</a></li>
         </ul>
       </div>
       <div class="line-fig">
-        <div class="surface wide-aerial" data-rest="0.76 0.25" tabindex="0" role="img" aria-label="Aerial image of a Sicilian countryside. Under the lens, the YOLO-C3 segmentation: roads in magenta, citrus groves in yellow, houses in blue, fields in orange." data-label="roads · citrus groves · houses · fields">
+        <div class="surface wide-aerial" data-rest="0.76 0.25" tabindex="0" role="img" aria-label="Aerial image of a Sicilian countryside. Under the lens, the YOLO-C3 segmentation: roads in magenta, citrus groves in yellow, houses in blue, fields in orange." data-label="roads · citrus groves · houses · fields" data-label-it="strade · agrumeti · case · campi">
           <img class="layer base" src="assets/img/sicily-orig.jpg" alt="" width="690" height="806">
           <img class="layer reveal" src="assets/img/sicily-seg.jpg" alt="" width="690" height="806">
           <div class="ring"><span class="tag">roads · citrus groves · houses · fields</span></div>
         </div>
-        <p class="caption">YOLO-C3 output on an aerial image.</p>
+        <p class="caption" data-i18n="r1.cap1">YOLO-C3 output on an aerial image.</p>
         <div class="trio">
-          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of a field edge and an orchard in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks">
+          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of a field edge and an orchard in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks" data-label-it="maschere YOLO">
             <img class="layer base" src="assets/img/pair1-orig.jpg" alt="" width="475" height="473" loading="lazy">
             <img class="layer reveal" src="assets/img/pair1-seg.jpg" alt="" width="475" height="473" loading="lazy">
             <div class="ring"><span class="tag">YOLO masks</span></div>
           </div>
-          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of orchards and a dirt road in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks">
+          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of orchards and a dirt road in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks" data-label-it="maschere YOLO">
             <img class="layer base" src="assets/img/pair2-orig.jpg" alt="" width="476" height="473" loading="lazy">
             <img class="layer reveal" src="assets/img/pair2-seg.jpg" alt="" width="476" height="473" loading="lazy">
             <div class="ring"><span class="tag">YOLO masks</span></div>
           </div>
-          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of an orchard with a water tank in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks">
+          <div class="surface square" tabindex="0" role="img" aria-label="Aerial image of an orchard with a water tank in Sicily. Under the lens, the instance outlines predicted by YOLO." data-label="YOLO masks" data-label-it="maschere YOLO">
             <img class="layer base" src="assets/img/pair3-orig.jpg" alt="" width="475" height="473" loading="lazy">
             <img class="layer reveal" src="assets/img/pair3-seg.jpg" alt="" width="475" height="473" loading="lazy">
             <div class="ring"><span class="tag">YOLO masks</span></div>
           </div>
         </div>
-        <p class="caption">Three images from the dataset, Sicily. Image source: Google Maps.</p>
+        <p class="caption" data-i18n="r1.cap2">Three images from the dataset, Sicily. Image source: Google Maps.</p>
       </div>
     </article>
 
     <article class="line">
       <div class="line-text">
-        <p class="when">Since 2026</p>
-        <h3>Urban pattern analysis</h3>
-        <p>Urban computing software that translates <b>Christopher Alexander's design patterns</b> into <b>computable rules on open geospatial data</b>, for the automatic evaluation of urban areas. Pattern 11, <b>Local Transport Areas</b>, became <b>seven measurable rules</b>, applied to <b>23 cities</b> in City Explorer. In progress: the shape of junctions, T versus X, read from aerial images for Pattern 50, <b>T Junctions</b>.</p>
+        <p class="when" data-i18n="r2.when">Since 2026</p>
+        <h3 data-i18n="r2.title">Urban pattern analysis</h3>
+        <p data-i18n="r2.text">Urban computing software that translates <b>Christopher Alexander's design patterns</b> into <b>computable rules on open geospatial data</b>, for the automatic evaluation of urban areas. Pattern 11, <b>Local Transport Areas</b>, became <b>seven measurable rules</b>, applied to <b>23 cities</b> in City Explorer. In progress: the shape of junctions, T versus X, read from aerial images for Pattern 50, <b>T Junctions</b>.</p>
         <ul class="papers">
-          <li><a href="https://erikascalettaphd.github.io/design_pattern_map/">City Explorer, the 23 cities on a map</a></li>
-          <li><a href="#pub-lta2026">Seven rules for a Local Transport Area, IEEE WETICE 2026</a></li>
+          <li><a href="https://erikascalettaphd.github.io/design_pattern_map/" data-i18n="r2.p1">City Explorer, the 23 cities on a map</a></li>
+          <li><a href="#pub-lta2026" data-i18n="r2.p2">Seven rules for a Local Transport Area, IEEE WETICE 2026</a></li>
         </ul>
       </div>
       <div class="line-fig">
@@ -152,24 +156,24 @@
           <svg class="layer reveal ov" viewBox="0 0 800 1155" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
           <div class="ring"><span class="tag">Local Transport Areas</span></div>
         </div>
-        <p class="caption">Caltagirone, two candidate zones. Map data © OpenStreetMap contributors.</p>
+        <p class="caption" data-i18n="r2.cap">Caltagirone, two candidate zones. Map data © OpenStreetMap contributors.</p>
       </div>
     </article>
 
     <article class="line">
       <div class="line-text">
-        <p class="when">Ghent, 2026</p>
-        <h3>Sport data science: cycling safety</h3>
-        <p>As a <b>visiting PhD researcher at IDLab, Ghent University</b>, with <b>Prof. Steven Verstockt</b>: the <b>safety of cycling races</b>, in the line the group develops in collaboration with the <b>Union Cycliste Internationale (UCI)</b>. AI models that automatically find the <b>dangerous points of race routes</b>.</p>
-        <p class="wip">Work in progress, not yet published.</p>
+        <p class="when" data-i18n="r3.when">Ghent, 2026</p>
+        <h3 data-i18n="r3.title">Sport data science: cycling safety</h3>
+        <p data-i18n="r3.text">As a <b>visiting PhD researcher at IDLab, Ghent University</b>, with <b>Prof. Steven Verstockt</b>: the <b>safety of cycling races</b>, in the line the group develops in collaboration with the <b>Union Cycliste Internationale (UCI)</b>. AI models that automatically find the <b>dangerous points of race routes</b>.</p>
+        <p class="wip" data-i18n="r3.wip">Work in progress, not yet published.</p>
       </div>
       <div class="line-fig">
-        <div class="surface route wide" data-route="markers" data-rest="0.51 0.65" tabindex="0" role="img" aria-label="Road map around the Koppenberg climb in Flanders. Under the lens, the race route and illustrative critical points." data-label="race route · critical points">
+        <div class="surface route wide" data-route="markers" data-rest="0.51 0.65" tabindex="0" role="img" aria-label="Road map around the Koppenberg climb in Flanders. Under the lens, the race route and illustrative critical points." data-label="race route · critical points" data-label-it="percorso di gara · punti critici">
           <img class="layer base" src="assets/img/flanders-roads.svg" alt="" width="800" height="652">
           <svg class="layer reveal ov" viewBox="0 0 800 652" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
           <div class="ring"><span class="tag">race route · critical points</span></div>
         </div>
-        <p class="caption">Koppenberg, Flanders. Route from OpenStreetMap; the markers are illustrative, not IDLab results. Map data © OpenStreetMap contributors.</p>
+        <p class="caption" data-i18n="r3.cap">Koppenberg, Flanders. Route from OpenStreetMap; the markers are illustrative, not IDLab results. Map data © OpenStreetMap contributors.</p>
       </div>
     </article>
   </div>
@@ -177,15 +181,15 @@
 
 <section class="section" id="publications" aria-labelledby="pub-title">
   <div class="wrap">
-    <h2 class="band" id="pub-title">Publications</h2>
-    <p class="intro">Most recent first. Click an entry to see my contribution.</p>
+    <h2 class="band" id="pub-title" data-i18n="pub.title">Publications</h2>
+    <p class="intro" data-i18n="pub.intro">Most recent first. Click an entry to see my contribution.</p>
     <ol class="cards" id="pub-list"></ol>
   </div>
 </section>
 
 <section class="section" id="experience" aria-labelledby="exp-title">
   <div class="wrap">
-    <h2 class="band" id="exp-title">Experience</h2>
+    <h2 class="band" id="exp-title" data-i18n="exp.title">Experience</h2>
     <div id="exp-list"></div>
   </div>
 </section>
@@ -194,35 +198,36 @@
 
 <section class="section" id="contact" aria-labelledby="contact-title">
   <div class="wrap">
-    <h2 class="band" id="contact-title">Contact</h2>
+    <h2 class="band" id="contact-title" data-i18n="contact.title">Contact</h2>
     <div class="contact-grid">
       <div>
-        <h3>Email</h3>
+        <h3 data-i18n="contact.email">Email</h3>
         <p><a href="mailto:erika.scaletta@phd.unict.it">erika.scaletta@phd.unict.it</a></p>
-        <h3>Profiles</h3>
+        <h3 data-i18n="contact.profiles">Profiles</h3>
         <ul class="buttons">
           <li><a class="pill" href="https://scholar.google.com/citations?user=HHEmF8QAAAAJ">Google Scholar</a></li>
           <li><a class="pill" href="https://orcid.org/0009-0003-3692-6091">ORCID</a></li>
           <li><a class="pill" href="https://www.linkedin.com/in/erika-scaletta-21712b161/">LinkedIn</a></li>
           <li><a class="pill" href="https://github.com/erikascalettaphd">GitHub</a></li>
-          <li><a class="pill" href="https://web.dmi.unict.it/dottorandi/erika.scaletta">University page</a></li>
+          <li><a class="pill" href="https://web.dmi.unict.it/dottorandi/erika.scaletta" data-i18n="contact.unipage">University page</a></li>
           <li><a class="pill pill-dark" href="cv/Erika-Scaletta-CV.pdf">CV (PDF)</a></li>
         </ul>
       </div>
       <div class="small">
-        <h3>Funding</h3>
-        <p>PhD scholarship co-funded by the <b>National Centre for HPC, Big Data and Quantum Computing (ICSC)</b>, Spoke 2, PNRR. Funded by the European Union, NextGenerationEU.</p>
+        <h3 data-i18n="contact.funding">Funding</h3>
+        <p data-i18n="contact.fundtext">PhD scholarship co-funded by the <b>National Centre for HPC, Big Data and Quantum Computing (ICSC)</b>, Spoke 2, PNRR. Funded by the European Union, NextGenerationEU.</p>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="bar">Erika Scaletta | Department of Mathematics and Computer Science, University of Catania | erika.scaletta@phd.unict.it</footer>
+<footer class="bar" data-i18n="bar">Erika Scaletta | Department of Mathematics and Computer Science, University of Catania | erika.scaletta@phd.unict.it</footer>
 
 <script src="assets/data/caltagirone-lta.js"></script>
 <script src="assets/data/flanders-route.js"></script>
 <script src="assets/data/publications.js"></script>
 <script src="assets/data/experience.js"></script>
+<script src="assets/data/i18n.js"></script>
 <script src="assets/js/site.js"></script>
 </body>
 </html>
