@@ -1,7 +1,7 @@
 /* Experience, organised as in a CV. Edit this file only: the page reads it.
    Each section has an id, a title and items. Each item: when, title, org, summary (always visible),
    detail (shown when the entry is expanded; optional), link + linkLabel (optional).
-   Write **like this** to make words bold. */
+   Write **like this** to make words bold. titleUrl makes the title a link; orgUrl makes the organisation a link. */
 window.EXPERIENCE = [
   {
     id: "education",
@@ -22,16 +22,16 @@ window.EXPERIENCE = [
     id: "research-experience",
     title: "Research experience",
     items: [
-      { when: "Sep to Dec 2026", title: "Visiting PhD researcher", org: "IDLab, Ghent University (Belgium)",
+      { when: "Sep 2026 to present", title: "Visiting PhD researcher", org: "IDLab, Ghent University (Belgium)",
         summary: "With **Prof. Steven Verstockt**, **Sports Data Science** team.",
         detail: "Research on the **safety of cycling races**, in the line the group develops in collaboration with the **Union Cycliste Internationale (UCI)**: AI models that automatically find the **dangerous points of race routes**." },
       { when: "Dec 2024 to present", title: "PhD researcher", org: "University of Catania, Department of Mathematics and Computer Science (DMI)",
         summary: "**Aerial and satellite imagery**, **urban pattern analysis**, **sport data science**.",
         detail: "The research lines are described in the Research section: computer vision and deep learning on real aerial images of Sicily, urban computing software that translates Christopher Alexander's design patterns into computable rules on open geospatial data, and cycling safety.", link: "#research", linkLabel: "See the Research section" },
-      { when: "20 to 25 Jul 2026", title: "LxMLS 2026, Lisbon Machine Learning Summer School", org: "Instituto Superior Técnico and Instituto de Telecomunicações, Lisbon",
+      { when: "20 to 25 Jul 2026", title: "LxMLS 2026, Lisbon Machine Learning Summer School", titleUrl: "https://lxmls.it.pt/", org: "Instituto Superior Técnico and Instituto de Telecomunicações, Lisbon",
         summary: "Neural networks, sequence models, **Transformers**, **vision-language models**.",
-        detail: "Lectures and Python labs.", link: "https://lxmls.it.pt/", linkLabel: "LxMLS website" },
-      { when: "Feb to Jun 2024", title: "Research internship", org: "CINUM, Centro di Informatica Umanistica, University of Catania",
+        detail: "Lectures and Python labs." },
+      { when: "Feb to Jun 2024", title: "Research internship", org: "CINUM, Centro di Informatica Umanistica, University of Catania", orgUrl: "https://www.cinum.unict.it/",
         summary: "150 hours. **XML-TEI** encoding and co-development of **DanteGPT**.",
         detail: "XML-TEI encoding of a corpus for a **digital library of modern Sicilian**; co-development of DanteGPT, a web platform that uses **LLM APIs** to make the entries of the Vocabolario Dantesco understandable to children." }
     ]
@@ -43,11 +43,9 @@ window.EXPERIENCE = [
       { when: "2026/2027", title: "Computer science tutor", org: "University of Catania, Department of Humanities (DISUM)",
         summary: "Tutoring in **computer science**." },
       { when: "2025/2026", title: "Thesis mentoring", org: "University of Catania, degree programme in Computer Science",
-        summary: "Technical and scientific support to **graduands writing their thesis**.",
-        detail: "Including **Francesco Cona's thesis** on detecting junctions and roundabouts from satellite images." },
+        summary: "Technical and scientific support to **graduands writing their thesis**." },
       { when: "2025/2026", title: "Junior tutor, Etniade", org: "Mathematics competition, University of Catania (DMI)",
-        summary: "**30 hours**.",
-        detail: "Organisation of the tests, participant data management, website and communication." },
+        summary: "Organisation of the tests, participant data management, website and communication." },
       { when: "Dec 2024 to present", title: "Teaching support, Software Engineering and Computer Architecture", org: "University of Catania (DMI)",
         summary: "**Teaching assistance** and **exam supervision**." },
       { when: "May 2021", title: "Teaching internship", org: "Liceo scientifico Majorana-Arcoleo, Caltagirone",
@@ -68,19 +66,18 @@ window.EXPERIENCE = [
         summary: "Workshop presentation.", link: "#pub-rec2025", linkLabel: "See the paper" },
       { when: "23 to 25 Jul 2025", title: "YOLO-based recognition of crop categories from real-world aerial images", org: "IEEE WETICE 2025, Catania",
         summary: "Conference presentation.", link: "#pub-yolo2025", linkLabel: "See the paper" },
-      { when: "20 to 25 Jul 2026", title: "LxMLS 2026, Lisbon Machine Learning Summer School", org: "Lisbon",
-        summary: "See Research experience.", link: "https://lxmls.it.pt/", linkLabel: "LxMLS website" }
+      { when: "20 to 25 Jul 2026", title: "LxMLS 2026, Lisbon Machine Learning Summer School", titleUrl: "https://lxmls.it.pt/", org: "Lisbon",
+        summary: "See Research experience." }
     ]
   },
   {
     id: "outreach",
     title: "Outreach and communication",
     items: [
-      { when: "2016 to 2025", title: "Founder of Sei Arte", org: "@sei_arte on Instagram",
+      { when: "2016 to 2025", title: "Founder of Sei Arte", org: "@sei_arte on Instagram", orgUrl: "https://www.instagram.com/sei_arte/",
         summary: "Cultural and literary outreach project, **about 130,000 followers**.",
-        detail: "**Social media strategist and content creator**: educational content, management of digital platforms, **audience data analysis**, advertising campaigns, collaborations with publishers and companies.",
-        link: "https://www.instagram.com/sei_arte/", linkLabel: "@sei_arte" },
-      { when: "2022 to 2024", title: "Social media manager of the LM-43 degree programme", org: "@scienzedeltesto, University of Catania",
+        detail: "**Social media strategist and content creator**: educational content, management of digital platforms, **audience data analysis**, advertising campaigns, collaborations with publishers and companies." },
+      { when: "2022 to 2024", title: "Social media manager of the LM-43 degree programme", org: "@scienzedeltesto, University of Catania", orgUrl: "https://www.instagram.com/scienzedeltesto/",
         summary: "Coordinated the group running the social profiles of the programme." }
     ]
   },

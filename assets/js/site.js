@@ -206,7 +206,9 @@
     wrap.appendChild(h('h3', null, esc(sec.title)));
     const ol = h('ol', 'cards');
     sec.items.forEach(it => {
-      const head = `<div>${it.when ? `<p class="meta">${esc(it.when)}</p>` : ''}<p class="title">${esc(it.title)}</p>${it.org ? `<p class="sub">${esc(it.org)}</p>` : ''}${it.summary ? `<p class="sub">${fmt(it.summary)}</p>` : ''}</div>`;
+      const title = it.titleUrl ? `<a href="${esc(it.titleUrl)}">${esc(it.title)}</a>` : esc(it.title);
+      const org = it.orgUrl ? `<a href="${esc(it.orgUrl)}">${esc(it.org)}</a>` : esc(it.org || '');
+      const head = `<div>${it.when ? `<p class="meta">${esc(it.when)}</p>` : ''}<p class="title">${title}</p>${it.org ? `<p class="sub">${org}</p>` : ''}${it.summary ? `<p class="sub">${fmt(it.summary)}</p>` : ''}</div>`;
       const body = (it.detail || it.link) ? `${it.detail ? `<p>${fmt(it.detail)}</p>` : ''}${it.link ? `<p><a href="${esc(it.link)}">${esc(it.linkLabel || 'Link')}</a></p>` : ''}` : null;
       ol.appendChild(makeCard({ head, body }));
     });
