@@ -14,7 +14,7 @@ window.EXPERIENCE = [
         it: { when: "Dic 2024 a oggi", title: "Dottorato di ricerca in Informatica", org: "Università di Catania, Dipartimento di Matematica e Informatica (DMI), XL ciclo",
           summary: "Conclusione prevista: **novembre 2027**. Supervisore: **Prof. Emiliano Alessio Tramontana**.",
           detail: "Co-finanziato dal **Centro Nazionale di Ricerca in HPC, Big Data e Quantum Computing (ICSC)**, Spoke 2, PNRR. Corsi: **Software Engineering, Computer Architecture, Distributed Systems Engineering, Natural Language Processing**." } },
-      { when: "25 Sep 2024", title: "M.Sc. in Digital Humanities", org: "University of Catania, Department of Humanities (DISUM)",
+      { when: "25 Sep 2024", title: "M.Sc. in Digital Humanities", titleUrl: "https://www.disum.unict.it/it/corsi/lm-43/presentazione-del-corso", org: "University of Catania, Department of Humanities (DISUM)",
         summary: "Scienze del Testo per le Professioni Digitali (LM-43), **110/110 cum laude**.",
         detail: "Thesis: Per una biblioteca digitale del siciliano: codifica, trattamento e archiviazione.",
         it: { when: "25 set 2024", title: "Laurea magistrale in Digital Humanities", org: "Università di Catania, Dipartimento di Scienze Umanistiche (DISUM)",
