@@ -48,11 +48,10 @@ window.I18N = {
     "r3.when": "Gand, 2026",
     "r3.title": "Sport data science: sicurezza nel ciclismo",
     "r3.text": "Come <b>visiting PhD researcher a <a href=\"https://idlab.ugent.be/\">IDLab</a>, Ghent University</b>, con il <b>Prof. Steven Verstockt</b>: la <b>sicurezza delle gare ciclistiche</b>, nella linea che il gruppo sviluppa in collaborazione con l'<b>Union Cycliste Internationale (UCI)</b>. Modelli di intelligenza artificiale che individuano automaticamente i <b>punti pericolosi dei percorsi di gara</b>.",
-    "r3.wip": "Lavoro in corso, non ancora pubblicato.",
     "r3.cap": "Koppenberg, Fiandre. Percorso da OpenStreetMap; i marcatori sono illustrativi, non risultati IDLab. Dati della mappa © OpenStreetMap contributors.",
 
     "pub.title": "Pubblicazioni",
-    "pub.intro": "Dalla più recente. Clicca una voce per vedere il mio contributo.",
+    "pub.intro": "Dalla più recente.",
     "exp.title": "Esperienza",
 
     "contact.title": "Contatti",
