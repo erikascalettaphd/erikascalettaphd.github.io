@@ -32,7 +32,7 @@ window.EXPERIENCE = [
     id: "research-experience",
     title: "Research experience", title_it: "Esperienza di ricerca",
     items: [
-      { when: "Sep 2026 to present", title: "Visiting PhD researcher", org: "IDLab, Ghent University (Belgium)",
+      { when: "Sep 2026 to present", title: "Visiting PhD researcher", org: "IDLab, Ghent University (Belgium)", orgUrl: "https://idlab.ugent.be/",
         summary: "With **Prof. Steven Verstockt**, **Sports Data Science** team.",
         detail: "Research on the **safety of cycling races**, in the line the group develops in collaboration with the **Union Cycliste Internationale (UCI)**: AI models that automatically find the **dangerous points of race routes**.",
         it: { when: "Set 2026 a oggi", org: "IDLab, Ghent University (Belgio)",

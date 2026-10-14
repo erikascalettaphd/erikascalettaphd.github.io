@@ -13,12 +13,12 @@ window.I18N = {
     "role.phd": "Dottoranda di ricerca in Informatica",
     "role.founder": "Fondatrice di <a href=\"https://www.instagram.com/sei_arte/\">Sei Arte</a>",
     "fact.dept": "Dipartimento di Matematica e Informatica, Università di Catania",
-    "fact.visit": "Visiting PhD researcher a IDLab, Ghent University",
+    "fact.visit": "Visiting PhD researcher a <a href=\"https://idlab.ugent.be/\">IDLab</a>, Ghent University",
     "fact.sup": "Supervisore: Prof. Emiliano Alessio Tramontana",
     "lede": "Insegno alle macchine a leggere i luoghi dall'alto: <b>cosa cresce in un campo</b>, <b>come è costruita una città</b> e <b>dove una strada diventa pericolosa per i ciclisti</b>.",
 
     "about.title": "Chi sono",
-    "about.bio": "Sono una <b>ricercatrice in Informatica</b> arrivata al codice passando dalla letteratura. Dopo una <b>laurea triennale in Lettere Moderne</b> e una <b>laurea magistrale in Digital Humanities</b> all'Università di Catania, dove ho costruito una biblioteca digitale del siciliano e co-sviluppato <b>DanteGPT</b>, nel dicembre 2024 ho iniziato il <b>dottorato in Informatica</b>, con la supervisione del Prof. Emiliano Alessio Tramontana e il co-finanziamento del <b>Centro Nazionale di Ricerca in HPC, Big Data e Quantum Computing</b>. Leggere i testi da vicino mi ha insegnato a leggere i luoghi allo stesso modo. Oggi addestro <b>modelli di visione su immagini aeree della Sicilia</b>, traduco i <b>pattern urbani di Christopher Alexander</b> in regole calcolate su dati OpenStreetMap e, come <b>visiting PhD researcher a IDLab, a Gand</b>, cerco le caratteristiche della strada che rendono pericolose le <b>gare ciclistiche</b>.",
+    "about.bio": "Sono una <b>ricercatrice in Informatica</b> arrivata al codice passando dalla letteratura. Dopo una <b>laurea triennale in Lettere Moderne</b> e una <b>laurea magistrale in Digital Humanities</b> all'Università di Catania, dove ho costruito una biblioteca digitale del siciliano e co-sviluppato <b>DanteGPT</b>, nel dicembre 2024 ho iniziato il <b>dottorato in Informatica</b>, con la supervisione del Prof. Emiliano Alessio Tramontana e il co-finanziamento del <b>Centro Nazionale di Ricerca in HPC, Big Data e Quantum Computing</b>. Leggere i testi da vicino mi ha insegnato a leggere i luoghi allo stesso modo. Oggi addestro <b>modelli di visione su immagini aeree della Sicilia</b>, traduco i <b>pattern urbani di Christopher Alexander</b> in regole calcolate su dati OpenStreetMap e, come <b>visiting PhD researcher a <a href=\"https://idlab.ugent.be/\">IDLab</a>, a Gand</b>, cerco le caratteristiche della strada che rendono pericolose le <b>gare ciclistiche</b>.",
     "about.interests": "Interessi di ricerca",
     "tag.1": "computer vision per immagini aeree e satellitari",
     "tag.2": "object detection e segmentazione",
@@ -47,7 +47,7 @@ window.I18N = {
     "r2.cap": "Caltagirone, due zone candidate. Dati della mappa © OpenStreetMap contributors.",
     "r3.when": "Gand, 2026",
     "r3.title": "Sport data science: sicurezza nel ciclismo",
-    "r3.text": "Come <b>visiting PhD researcher a IDLab, Ghent University</b>, con il <b>Prof. Steven Verstockt</b>: la <b>sicurezza delle gare ciclistiche</b>, nella linea che il gruppo sviluppa in collaborazione con l'<b>Union Cycliste Internationale (UCI)</b>. Modelli di intelligenza artificiale che individuano automaticamente i <b>punti pericolosi dei percorsi di gara</b>.",
+    "r3.text": "Come <b>visiting PhD researcher a <a href=\"https://idlab.ugent.be/\">IDLab</a>, Ghent University</b>, con il <b>Prof. Steven Verstockt</b>: la <b>sicurezza delle gare ciclistiche</b>, nella linea che il gruppo sviluppa in collaborazione con l'<b>Union Cycliste Internationale (UCI)</b>. Modelli di intelligenza artificiale che individuano automaticamente i <b>punti pericolosi dei percorsi di gara</b>.",
     "r3.wip": "Lavoro in corso, non ancora pubblicato.",
     "r3.cap": "Koppenberg, Fiandre. Percorso da OpenStreetMap; i marcatori sono illustrativi, non risultati IDLab. Dati della mappa © OpenStreetMap contributors.",
 
